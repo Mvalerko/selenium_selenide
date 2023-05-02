@@ -14,8 +14,3 @@ install:
 
 build_script:
   - ./gradlew test --info  # запускаем тест, флаг --info позволяет выводить больше информации
-
-ktor:
-  application:
-    modules:
-      - com.example.ApplicationKt.module
