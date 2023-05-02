@@ -17,8 +17,7 @@ class TestWebForm {
     private WebDriver driver;
 
     @BeforeAll
-    static void setUpAll() {
-        System.setProperty("webdriver.chrome.driver", "./driver/chromedriver");
+    static void setupAll() {
         WebDriverManager.chromedriver().setup();
     }
 
