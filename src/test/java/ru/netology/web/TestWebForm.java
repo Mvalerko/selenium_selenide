@@ -28,7 +28,7 @@ class TestWebForm {
         options.addArguments("--no-sandbox");
         options.addArguments("--headless");
         driver = new ChromeDriver(options);
-        driver.get("http://localhost:9999");
+        driver.get("http://localhost:7777");
     }
 
     @AfterEach
@@ -39,7 +39,7 @@ class TestWebForm {
 
     @Test
     void shouldTestV1() {
-        driver.get("http://0.0.0.0:9999/");
+        driver.get("http://0.0.0.0:7777/");
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Валерко Михаил");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79012423764");
         driver.findElement(By.className("checkbox__box")).click();
@@ -51,7 +51,7 @@ class TestWebForm {
 
     @Test
     void shouldTestV2() {
-        driver.get("http://0.0.0.0:9999/");
+        driver.get("http://0.0.0.0:7777/");
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("валерко михаил");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79012423764");
         driver.findElement(By.className("checkbox__box")).click();
@@ -63,7 +63,7 @@ class TestWebForm {
 
     @Test
     void shouldTestV3() {
-        driver.get("http://0.0.0.0:9999/");
+        driver.get("http://0.0.0.0:7777/");
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("михаил");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+89012423764");
         driver.findElement(By.className("checkbox__box")).click();
@@ -75,7 +75,7 @@ class TestWebForm {
 
     @Test
     void shouldTestV4() {
-        driver.get("http://0.0.0.0:9999/");
+        driver.get("http://0.0.0.0:7777/");
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Михаил");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+89012423764");
         driver.findElement(By.className("checkbox__box")).click();
@@ -87,7 +87,7 @@ class TestWebForm {
 
     @Test
     void shouldTestV5() {
-        driver.get("http://0.0.0.0:9999/");
+        driver.get("http://0.0.0.0:7777/");
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Михаил валерко");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+89012423764");
         driver.findElement(By.className("checkbox__box")).click();
@@ -99,7 +99,7 @@ class TestWebForm {
 
     @Test
     void shouldTestV6() {
-        driver.get("http://0.0.0.0:9999/");
+        driver.get("http://0.0.0.0:7777/");
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("михаил Валерко");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+89012423764");
         driver.findElement(By.className("checkbox__box")).click();

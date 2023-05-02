@@ -41,7 +41,7 @@ class TestWebFormNegative {
     @Disabled
     @Test
     void shouldTestV1() {
-        driver.get("http://0.0.0.0:9999/");
+        driver.get("http://0.0.0.0:7777/");
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Valerko Mikhail");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79012423764");
         driver.findElement(By.className("checkbox__box")).click();
