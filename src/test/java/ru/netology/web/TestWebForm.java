@@ -99,7 +99,7 @@ class TestWebForm {
         assertEquals(expected, actual);
     }
 
-    @Disabled
+    //@Disabled
     @Test
     void positiveScriptSpecificName() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Ёнхи Иванов");
