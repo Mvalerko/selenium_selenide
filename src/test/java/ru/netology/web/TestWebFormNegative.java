@@ -35,7 +35,7 @@ class TestWebFormNegative {
 
     //@Disabled
     @Test
-    void shouldTestV1() {
+    void negativeScriptNameInEnglish() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Valerko Mikhail");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79012423764");
         driver.findElement(By.className("checkbox__box")).click();
@@ -46,7 +46,7 @@ class TestWebFormNegative {
     }
 
     @Test
-    void shouldTestV12() {
+    void negativeScriptNameOmitted() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79012423764");
         driver.findElement(By.className("checkbox__box")).click();
@@ -57,7 +57,7 @@ class TestWebFormNegative {
     }
 
     @Test
-    void shouldTestV13() {
+    void negativeScriptSpaceInsteadOfName() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys(" ");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79012423764");
         driver.findElement(By.className("checkbox__box")).click();
@@ -68,7 +68,7 @@ class TestWebFormNegative {
     }
 
     @Test
-    void shouldTestV3() {
+    void negativeScriptNameAlongWithNumber() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Валерко Михаил1");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79012423764");
         driver.findElement(By.className("checkbox__box")).click();
@@ -79,7 +79,7 @@ class TestWebFormNegative {
     }
 
     @Test
-    void shouldTestV4() {
+    void negativeScriptNameAlongWithEnglishLetter() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Валерко Mихаил");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79012423764");
         driver.findElement(By.className("checkbox__box")).click();
@@ -90,7 +90,7 @@ class TestWebFormNegative {
     }
 
     @Test
-    void shouldTestV5() {
+    void negativeScriptNameAlongWithSpecialSymbol() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("˜Валерко Михаил");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79012423764");
         driver.findElement(By.className("checkbox__box")).click();
@@ -101,7 +101,7 @@ class TestWebFormNegative {
     }
 
     @Test
-    void shouldTestV2() {
+    void negativeScriptPhoneOfGreaterLength() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Валерко Михаил");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+779012423764");
         driver.findElement(By.className("checkbox__box")).click();
@@ -112,7 +112,7 @@ class TestWebFormNegative {
     }
 
     @Test
-    void shouldTestV6() {
+    void negativeScriptPhoneOfShorterLength() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Валерко Михаил");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+7912423764");
         driver.findElement(By.className("checkbox__box")).click();
@@ -123,7 +123,7 @@ class TestWebFormNegative {
     }
 
     @Test
-    void shouldTestV14() {
+    void negativeScriptPhoneOmitted() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Валерко Михаил");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("");
         driver.findElement(By.className("checkbox__box")).click();
@@ -133,7 +133,7 @@ class TestWebFormNegative {
         assertEquals(expected, actual);
     }
     @Test
-    void shouldTestV15() {
+    void negativeScriptSpaceInsteadOfPhone() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Валерко Михаил");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys(" ");
         driver.findElement(By.className("checkbox__box")).click();
@@ -143,7 +143,7 @@ class TestWebFormNegative {
         assertEquals(expected, actual);
     }
     @Test
-    void shouldTestV7() {
+    void negativeScriptPhoneOfShorterLengthV2() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Валерко Михаил");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+790364");
         driver.findElement(By.className("checkbox__box")).click();
@@ -154,7 +154,7 @@ class TestWebFormNegative {
     }
 
     @Test
-    void shouldTestV8() {
+    void negativeScriptPhoneAlongWithEnglishLetter() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Валерко Михаил");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+72903i23264");
         driver.findElement(By.className("checkbox__box")).click();
@@ -165,7 +165,18 @@ class TestWebFormNegative {
     }
 
     @Test
-    void shouldTestV9() {
+    void negativeScriptPhoneAlongWithRussianLetter() {
+        driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Валерко Михаил");
+        driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+72903я23264");
+        driver.findElement(By.className("checkbox__box")).click();
+        driver.findElement(By.className("button__content")).click();
+        String expected = "Телефон указан неверно. Должно быть 11 цифр, например, +79012345678.";
+        String actual = driver.findElement(By.cssSelector("[data-test-id='phone'].input_invalid .input__sub")).getText().trim();
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    void negativeScriptPhoneInWrongFormat() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Валерко Михаил");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("19263436587");
         driver.findElement(By.className("checkbox__box")).click();
@@ -176,7 +187,7 @@ class TestWebFormNegative {
     }
 
     @Test
-    void shouldTestV11() {
+    void negativeScriptNoAgreement() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Валерко Михаил");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+72903123264");
         //driver.findElement(By.className("checkbox__box")).click();
