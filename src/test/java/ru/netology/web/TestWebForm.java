@@ -34,8 +34,7 @@ class TestWebForm {
     }
 
     @Test
-    void shouldTestV1() {
-        driver.get("http://0.0.0.0:7777/");
+    void positiveScriptNameSurname() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Валерко Михаил");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79012423764");
         driver.findElement(By.className("checkbox__box")).click();
@@ -46,8 +45,7 @@ class TestWebForm {
     }
 
     @Test
-    void shouldTestV2() {
-        driver.get("http://0.0.0.0:7777/");
+    void positiveScriptNameSurnameLowercase() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("валерко михаил");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+79012423764");
         driver.findElement(By.className("checkbox__box")).click();
@@ -58,8 +56,7 @@ class TestWebForm {
     }
 
     @Test
-    void shouldTestV3() {
-        driver.get("http://0.0.0.0:7777/");
+    void positiveScriptOnlyNameLowercase() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("михаил");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+89012423764");
         driver.findElement(By.className("checkbox__box")).click();
@@ -70,8 +67,7 @@ class TestWebForm {
     }
 
     @Test
-    void shouldTestV4() {
-        driver.get("http://0.0.0.0:7777/");
+    void positiveScriptOnlyName() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Михаил");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+89012423764");
         driver.findElement(By.className("checkbox__box")).click();
@@ -82,8 +78,7 @@ class TestWebForm {
     }
 
     @Test
-    void shouldTestV5() {
-        driver.get("http://0.0.0.0:7777/");
+    void positiveScriptNameAndSurnameLowercase() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Михаил валерко");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+89012423764");
         driver.findElement(By.className("checkbox__box")).click();
@@ -94,8 +89,7 @@ class TestWebForm {
     }
 
     @Test
-    void shouldTestV6() {
-        driver.get("http://0.0.0.0:7777/");
+    void positiveScriptNameLowercaseAndSurname() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("михаил Валерко");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+89012423764");
         driver.findElement(By.className("checkbox__box")).click();
@@ -107,8 +101,7 @@ class TestWebForm {
 
     @Disabled
     @Test
-    void shouldTestV7() {
-        driver.get("http://0.0.0.0:7777/");
+    void positiveScriptSpecificName() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Ёнхи Иванов");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+89012423764");
         driver.findElement(By.className("checkbox__box")).click();
@@ -118,8 +111,7 @@ class TestWebForm {
         assertEquals(expected, actual);
     }
     @Test
-    void shouldTestV8() {
-        driver.get("http://0.0.0.0:7777/");
+    void positiveScriptDoubleName() {
         driver.findElement(By.cssSelector("[data-test-id='name'] input")).sendKeys("Сен-Жюст Петров");
         driver.findElement(By.cssSelector("[data-test-id='phone'] input")).sendKeys("+89012423764");
         driver.findElement(By.className("checkbox__box")).click();
